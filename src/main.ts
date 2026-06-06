@@ -1,10 +1,11 @@
 import * as THREE from "three";
-import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import {
   ProjectionMapper,
   ProjectionMapperGUI,
   ProjectorCamera,
 } from "three-projection-mapper";
+
+import trailerUrl from "./video/trailer.mp4";
 
 const renderer = new THREE.WebGLRenderer({
   powerPreference: "high-performance",
@@ -29,7 +30,7 @@ camera.updateProjectionMatrix();
 camera.position.set(0, 0.05, 4.25);
 
 const video = document.createElement("video");
-video.src = new URL("./video/trailer.mp4", import.meta.url).href;
+video.src = trailerUrl;
 video.loop = true;
 video.muted = false;
 video.playsInline = true;
